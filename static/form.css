@@ -1,0 +1,42 @@
+*{font-size: 12px;}
+.box{ position: fixed;left:50%;top:50%; }
+
+.box  .close {
+    position: absolute;top:  0;right: -1px; display: block;color: #fff;background: #000;padding:4px 10px 4px 10px; border-radius: 0 6px 0 0; text-decoration: none;
+}
+.form,.field {width: 512px;padding: 20px;margin: 0 0 0 -250px;
+  border-radius: 6px; padding-top:20px;
+    background: #fff;box-shadow: 0 0 10px #000;display: none; position: relative;
+}
+.field{ width:980px; margin-left:-490px;padding-top:40px; }
+.btn{display: inline-block;color: #fff;background: #000;padding:5px 20px 5px 20px;}
+input {width: 320px;height: 22px;display: inline-block;}
+.w40{ width: 40px;}
+.w50{ width: 50px;}
+.w100{ width: 117px;}
+		textarea {width: 450px;height: 200px;}
+		.form .btnSava {}
+.form span {display: inline-block;width: 70px; padding-left:10px;}
+table{ border: 0;}
+table tr{ }
+table tr:hover{ background:#f3f3f3;}
+
+.btnAdd{ position: fixed; padding:20px 50px 20px 50px; bottom: 0; left:50%; transform: translateX(-50%);}
+
+.eu1{ background:#001f7e;}
+
+.eu2{ background:#fecc00;}
+.eu3{ background:#006233;}
+.eu4{ background:#e30a17;}
+
+.u2{ background:#000;}
+.u1{ background:#ccc;}
+.readme{width:50px; overflow: hidden; }
+.readme span{word-wrap: break-word; display: inline-block;
+word-break: break-all;white-space: nowrap; text-overflow: ellipsis; width:50px; overflow: hidden; }
+
+.sort{ position: fixed; bottom: 0; right: 0;background:#000;padding:5px ;}
+.sort a{ display: inline-block; padding:2px 5px ; background:#000;color:#fff;}
+
+.dbt{position: fixed; top: 0; right: 0;background:#000;padding:5px ;}
+.dbt a{display:block;padding:2px 5px ; background:#000;color:#fff; text-align: right;}
