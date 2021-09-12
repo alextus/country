@@ -41,7 +41,7 @@ class PHPExcel_Shared_File
 	 * @protected
 	 * @var	boolean
 	 */
-	protected static $_useUploadTempDirectory	= FALSE;
+	protected static $_useUploadTempDirectory	= true;
 
 
 	/**
@@ -134,6 +134,7 @@ class PHPExcel_Shared_File
 	 */
 	public static function sys_get_temp_dir()
 	{
+	
 		if (self::$_useUploadTempDirectory) {
 			//  use upload-directory when defined to allow running on environments having very restricted
 			//      open_basedir configs
@@ -143,8 +144,9 @@ class PHPExcel_Shared_File
 						return realpath($temp);
 				}
 			}
+		
 		}
-
+	
 		// sys_get_temp_dir is only available since PHP 5.2.1
 		// http://php.net/manual/en/function.sys-get-temp-dir.php#94119
 		if ( !function_exists('sys_get_temp_dir')) {

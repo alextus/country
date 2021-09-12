@@ -43,20 +43,19 @@
     <div class="dbt">
         
         <a href="javascript:getField();">字段</a>
-        <a href="javascript:setShowField();">显示字段</a>
     </div>
    <script src="static/jdb.js?v=1"></script>
    <script>
-       var d=<?php echo $this->_var['d']; ?>
+       var d={$d}
 
-       var t=<?php echo $this->_var['t']; ?>
+       var t={$t}
 
-       
+       {literal}
        var _form= atu.form
        _form.ini(".form",t,{},function(i,n){
            $(".form .d").append('<span>' + n + ':</span>')
            c=""
-           var i50=["zm2" ,"zm2s","zm3","num","tel", "time", "time2","currency","currency2","currency3"], i100 = ["belong", "money", "money2", "continent", "population", "area", "un", "untime","fz","fz2"], ibr = ["zm3", "tel", "time2", "untime", "continent", "population","money2","currency3", "fz2"]
+           var i50=["zm2s","zm3","num","tel", "time", "time2","currency","currency2","currency3"], i100 = ["zm2","en","belong", "money", "money2", "continent", "population", "area", "un", "untime","fz","fz2"], ibr = ["en", "zm3", "tel", "time2", "untime", "continent", "population","money2","currency3", "fz2"]
 
            
            if(i50.indexOf(i)>=0|| i100.indexOf(i) >= 0){
@@ -234,7 +233,7 @@
             var cn = $("input[name=cn]").val(), zm2 = $("input[name=zm2]").val()
 
 
-           $.get("?act=getBaidu", {"cn": cn, "zm2": zm2}, function (d) {
+           $.get("?act=getBaidu", { "cn": cn, "zm2": zm2 }, function (d) {
               window.open(d.url)
            }, "json")
            
@@ -243,7 +242,7 @@
            var cn=$("input[name=cn]").val(),zm2= $("input[name=zm2]").val()
           
         
-            $.get("?act=getFlag", {"cn": cn,"zm2": zm2}, function (d) {
+            $.get("?act=getFlag", { "cn": cn,"zm2": zm2 }, function (d) {
                 $("input[name=flag]").val(d.flag)
                 $("input[name=tel]").val(d.tel)
                 $("input[name=time]").val(d.time)
@@ -257,7 +256,7 @@
            var cn = $("input[name=cn]").val(), zm2 = $("input[name=zm2]").val()
 
 
-           $.get("?act=getBirth", {"cn": cn, "zm2": zm2}, function (d) {
+           $.get("?act=getBirth", { "cn": cn, "zm2": zm2 }, function (d) {
                $("input[name=birthtime]").val(d.birthtime)
                if($("input[name=capital]").val()==""){
                    $("input[name=capital]").val(d.capital)
@@ -266,7 +265,7 @@
                window.focus()
            }, "json")
        }
-        
+        {/literal}
    </script>
 </body>
 </html>

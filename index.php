@@ -35,17 +35,7 @@ foreach($dbt as $k=>$v){
 	}
 }
 $dbt2=$d1;
-//$d=json_decode($d,true);
 
-//$dbt = array("id" => "序号", "zm2" => "二字母", "zm2s" => "二字母2", "zm3" => "三字母", "num" => "数字", "tel" => "电话区号", "time" => "时区", "time2" => "夏时制", "en" => "简称", "en2" => "全称", "cn" => "中文", "cn3" => "全称", "cn2" => "别名", "belong" =>  "所属", "continent"=>"洲", "capital" =>  "首都", "flag" => "国旗", "flag" => "国旗", "area" => "面积(平方公里)", "population" => "人口", "eun" => "组织", "un" => "联合国成员国", "untime" => "入联时间", "birthtime" => "建国日", "readme" => "备注");
-/*
-$dbt3 = array("id" => "序号", "zm2" => "二字母", "zm2s" => "二字母2", "zm3" => "三字母", "num" => "数字", "tel" => "电话区号", "time" => "时区", "time2" => "夏时制", "en" => "简称", "en2" => "全称", "cn" => "中文", "cn3" => "全称", "cn2" => "别名", "belong" =>  "所属", "continent" => "洲", "capital" =>  "首都", "flag" => "国旗", "flag" => "国旗", "area" => "面积(平方公里)", "population" => "人口", "eun" => "组织", "un" => "联合国成员国", "untime" => "入联时间", "birthtime" => "建国日", "readme" => "备注");
-$d4=array();
-foreach(json_decode($d,true) as $row){
-	$d4[]=array("id" => $row["id"], "zm2" => $row["zm2"], "en" => $row["en"], "cn" => $row["cn"], "belong" => $row["belong"],  "capital" => empty($row["capital"])?"": $row["capital"], "area" => $row["area"], "population" => $row["population"], "un" =>  empty($row["un"]) ? "" : $row["un"]);
-}
-file_put_contents("c.json",json_encode($d4));
-*/
 if($act== "getField"){
 	echo json_encode($jdt);
 }
@@ -451,5 +441,5 @@ if($act=="test"){
 	echo md5('AlexTu2020');
 }
 if($act){}else{
-show("index.html", array("d" => $d,"t"=>json_encode($dbt2)));
+show("country.html", array("d" => $d,"t"=>json_encode($dbt2)));
 }

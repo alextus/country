@@ -46,11 +46,11 @@
     </div>
    <script src="static/jdb.js?v=1"></script>
    <script>
-       var d={$d}
+       var d=<?php echo $this->_var['d']; ?>
 
-       var t={$t}
+       var t=<?php echo $this->_var['t']; ?>
 
-       {literal}
+       
        var _form= atu.form
        _form.ini(".form",t,{},function(i,n){
            $(".form .d").append('<span>' + n + ':</span>')
@@ -233,7 +233,7 @@
             var cn = $("input[name=cn]").val(), zm2 = $("input[name=zm2]").val()
 
 
-           $.get("?act=getBaidu", { "cn": cn, "zm2": zm2 }, function (d) {
+           $.get("?act=getBaidu", {"cn": cn, "zm2": zm2}, function (d) {
               window.open(d.url)
            }, "json")
            
@@ -242,7 +242,7 @@
            var cn=$("input[name=cn]").val(),zm2= $("input[name=zm2]").val()
           
         
-            $.get("?act=getFlag", { "cn": cn,"zm2": zm2 }, function (d) {
+            $.get("?act=getFlag", {"cn": cn,"zm2": zm2}, function (d) {
                 $("input[name=flag]").val(d.flag)
                 $("input[name=tel]").val(d.tel)
                 $("input[name=time]").val(d.time)
@@ -256,7 +256,7 @@
            var cn = $("input[name=cn]").val(), zm2 = $("input[name=zm2]").val()
 
 
-           $.get("?act=getBirth", { "cn": cn, "zm2": zm2 }, function (d) {
+           $.get("?act=getBirth", {"cn": cn, "zm2": zm2}, function (d) {
                $("input[name=birthtime]").val(d.birthtime)
                if($("input[name=capital]").val()==""){
                    $("input[name=capital]").val(d.capital)
@@ -265,7 +265,7 @@
                window.focus()
            }, "json")
        }
-        {/literal}
+        
    </script>
 </body>
 </html>

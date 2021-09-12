@@ -187,19 +187,23 @@ class PHPExcel_Writer_Excel2007 extends PHPExcel_Writer_Abstract implements PHPE
 	 */
 	public function save($pFilename = null)
 	{
+	
 		if ($this->_spreadSheet !== NULL) {
 			// garbage collect
+		
 			$this->_spreadSheet->garbageCollect();
 
 			// If $pFilename is php://output or php://stdout, make it a temporary file...
 			$originalFilename = $pFilename;
 			if (strtolower($pFilename) == 'php://output' || strtolower($pFilename) == 'php://stdout') {
+				
 				$pFilename = @tempnam(PHPExcel_Shared_File::sys_get_temp_dir(), 'phpxltmp');
+			
 				if ($pFilename == '') {
 					$pFilename = $originalFilename;
 				}
 			}
-
+		
 			$saveDebugLog = PHPExcel_Calculation::getInstance($this->_spreadSheet)->getDebugLog()->getWriteDebugLog();
 			PHPExcel_Calculation::getInstance($this->_spreadSheet)->getDebugLog()->setWriteDebugLog(FALSE);
 			$saveDateReturnType = PHPExcel_Calculation_Functions::getReturnDateType();
